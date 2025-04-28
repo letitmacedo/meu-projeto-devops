@@ -3,17 +3,19 @@ name: CD Workflow
 on:
   push:
     branches:
-      - main  # O deploy será feito sempre que houver um push para a branch 'main'
+      - main
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # Sistema operacional onde o deploy será feito
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2  # Baixa o código
+        uses: actions/checkout@v3
 
       - name: Deploy to Server
         run: |
           echo "Deploying to server..."
-          # Aqui você adiciona os comandos de deploy, como usar SSH para enviar os arquivos para o servidor
+          # TODO: coloque aqui seus comandos de deploy, por exemplo:
+          # scp -r . user@servidor:/caminho/do/projeto
+          # ssh user@servidor 'cd /caminho/do/projeto && ./deploy.sh'
