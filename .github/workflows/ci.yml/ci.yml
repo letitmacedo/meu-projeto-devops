@@ -24,4 +24,5 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest
+          pytest --maxfail=1 --disable-warnings -q
+          echo "Tests completed successfully."
