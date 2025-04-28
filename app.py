@@ -1,10 +1,13 @@
-from flask import Flask
+# app.py
 
-app = Flask(__name__)
+def soma(a, b):
+    return a + b
 
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
+def subtracao(a, b):
+    return a - b
 
-if __name__ == '__main__':
-    app.run(debug=True)
+def multiplicacao(a, b):
+    return a * b
+
+def divisao(a, b):
+    return a / b
