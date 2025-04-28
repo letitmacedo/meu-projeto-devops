@@ -2,7 +2,8 @@ name: Run Python Tests
 
 on:
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   test:
@@ -24,4 +25,5 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest
+          pytest --maxfail=1 --disable-warnings -q
+          echo "Tests completed successfully."
