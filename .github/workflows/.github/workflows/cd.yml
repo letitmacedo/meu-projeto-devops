@@ -1,0 +1,19 @@
+name: CD Workflow
+
+on:
+  push:
+    branches:
+      - main  # O deploy será feito sempre que houver um push para a branch 'main'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Sistema operacional onde o deploy será feito
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Baixa o código
+
+      - name: Deploy to Server
+        run: |
+          echo "Deploying to server..."
+          # Aqui você adiciona os comandos de deploy, como usar SSH para enviar os arquivos para o servidor
